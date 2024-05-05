@@ -2,12 +2,14 @@ from flask import Flask, request, send_file
 from RealESRGAN import RealESRGAN
 from PIL import Image
 import numpy as np
+import torch
 import io
 import os
 
 app = Flask(__name__)
 
 model_scale = 4
+# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 device = 'cpu'
 
 model = RealESRGAN(device=device, scale=model_scale)
