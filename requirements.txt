@@ -6,3 +6,4 @@ torchvision>=0.8.0
 tqdm
 Flask
 huggingface-hub
+gunicorn
