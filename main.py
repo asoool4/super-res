@@ -4,7 +4,6 @@ from PIL import Image
 import numpy as np
 import torch
 from flask_cors import CORS
-import os
 
 app = Flask(__name__)
 CORS(app)
@@ -38,14 +37,11 @@ def super_resolve():
     sr_image = model.predict(np.array(image))
 
     # Save super-resolved image locally
-    sr_image_path = 'super_res_image.png'
+    sr_image_path = 'results/sr_face.png'
     sr_image.save(sr_image_path)
 
     # Send the saved image file
     response = send_file(sr_image_path, mimetype='image/png')
-
-    # Clean up the temporary file
-    os.remove(sr_image_path)
 
     return response
 
