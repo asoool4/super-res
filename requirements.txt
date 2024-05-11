@@ -6,6 +6,8 @@ torchvision>=0.8.0
 tqdm
 Flask
 huggingface-hub
+flask_cors
+flask-cors
 
 # for deploy app on render
 gunicorn
